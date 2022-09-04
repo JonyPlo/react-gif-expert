@@ -4,7 +4,7 @@ import { AddCategory, GifGrid } from "./components";
 export const GifExpertApp = () => {
   const [categories, setCategories] = useState(["One Punch"]);
 
-  const onAddCategory = (newCategory) => {
+  const onNewCategory = (newCategory) => {
     const repeatedCategory = categories.find(
       (category) => category.toLowerCase() === newCategory.toLowerCase()
     );
@@ -18,7 +18,7 @@ export const GifExpertApp = () => {
   return (
     <>
       <h1>GifExpertApp</h1>
-      <AddCategory onAddCategory={onAddCategory} />
+      <AddCategory onNewCategory={onNewCategory} />
       {categories.map((category) => (
         <GifGrid key={category} category={category} />
       ))}

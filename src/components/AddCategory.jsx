@@ -1,7 +1,8 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 
-export const AddCategory = ({ onAddCategory }) => {
-  const [inputValue, setInputValue] = useState("One Punch");
+export const AddCategory = ({ onNewCategory }) => {
+  const [inputValue, setInputValue] = useState("");
 
   const onInputChange = ({ target }) => {
     setInputValue(target.value);
@@ -11,12 +12,12 @@ export const AddCategory = ({ onAddCategory }) => {
     e.preventDefault();
     const inputValueTrim = inputValue.trim();
     if (inputValueTrim.length <= 1) return;
-    onAddCategory(inputValueTrim);
+    onNewCategory(inputValueTrim);
     setInputValue("");
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} aria-label="form">
       <input
         type='text'
         placeholder='Buscar Gif'
@@ -25,4 +26,8 @@ export const AddCategory = ({ onAddCategory }) => {
       />
     </form>
   );
+};
+
+AddCategory.propTypes = {
+  onNewCategory: PropTypes.func.isRequired,
 };
