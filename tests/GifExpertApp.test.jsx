@@ -59,6 +59,6 @@ describe("Pruebas en el componente <GifExpertApp/>", () => {
 
     const arrayCategories = screen.getAllByRole("heading", { level: 3 });
 
-    expect(arrayCategories.length).toBeGreaterThan(1);
+    expect(arrayCategories.length).toBeGreaterThan(1)
   });
 });
