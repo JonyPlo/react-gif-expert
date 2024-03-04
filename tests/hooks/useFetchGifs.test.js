@@ -14,9 +14,10 @@ describe("Pruebas en el hook useFetchGifs", () => {
     const { result } = renderHook(() => useFetchGifs("One Punch"));
 
     // Con el metodo waitFor digo que espere hasta que lo que este dentro del callback sea verdadero, en este caso hacemos que espere el resultado que devuelve el hook useFetchGifs
-    await waitFor(() =>
-      expect(result.current.images.length).toBeGreaterThan(0)
-    );
+    await waitFor(() => {
+      const resultLength = result.current.images.length;
+      expect(resultLength).toBeGreaterThan(0);
+    });
 
     const { images, isLoading } = result.current;
 

@@ -20,8 +20,5 @@ exports[`Pruebas en el componente <GifExpertApp/> Debe de hacer match con el sna
   <h2>
     Cargando...
   </h2>
-  <div
-    class="card-grid"
-  />
 </div>
 `;

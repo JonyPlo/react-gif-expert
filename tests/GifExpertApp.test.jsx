@@ -25,7 +25,7 @@ describe("Pruebas en el componente <GifExpertApp/>", () => {
     const input = screen.getByRole("textbox");
     const form = screen.getByRole("form");
 
-    fireEvent.input(input, { target: { value: "One Punch" } });
+    fireEvent.input(input, { target: { value: initialCategory } });
     fireEvent.submit(form);
 
     expect(window.alert).toHaveBeenCalled();

@@ -37,6 +37,6 @@ describe("Pruebas en <AddCategory/>", () => {
     fireEvent.submit(form);
 
     expect(onNewCategory).toHaveBeenCalledTimes(0); // Este expect evalua lo mismo que el expect de abajo
-    expect(onNewCategory).not.toHaveBeenCalled(); // Agregando .not delante de la segunda expresion podemos negar el resultado, seria algo mas o menos asi !true = false
+    expect(onNewCategory).not.toHaveBeenCalled(); // Agregando .not delante de la segunda expresion podemos negar el resultado, viendolo desde javascript seria algo mas o menos asi !true
   });
 });
