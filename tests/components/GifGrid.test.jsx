@@ -1,33 +1,34 @@
-import { render, screen } from "@testing-library/react";
-import { GifGrid } from "../../src/components/GifGrid";
-import { useFetchGifs } from "../../src/hooks/useFetchGifs";
+import { render, screen } from '@testing-library/react';
+import { GifGrid } from '../../src/components/GifGrid';
+import { useFetchGifs } from '../../src/hooks/useFetchGifs';
 
-jest.mock("../../src/hooks/useFetchGifs"); // Agregando este jest.mock transformo la funcion useFetchGifs que estoy importando en una funcion mock o simulada con propiedades de mock
+jest.mock('../../src/hooks/useFetchGifs'); // Agregando este jest.mock transformo la funcion useFetchGifs que estoy importando en una funcion mock o simulada con propiedades de mock
 
-describe("Pruebas en el componente <GifGrid/>", () => {
-  const category = "One Punch";
-  test("Debe de mostrar el loading inicialmente", () => {
+describe('Pruebas en el componente <GifGrid/>', () => {
+  const category = 'One Punch';
+  test('Debe de mostrar el loading inicialmente', () => {
     useFetchGifs.mockReturnValue({
       images: [],
       isLoading: true,
     });
 
     render(<GifGrid category={category} />);
-    expect(screen.getByText("Cargando..."));
+    screen.debug();
+    expect(screen.getByText('Cargando...'));
     expect(screen.getByText(category));
   });
 
-  test("Debe de mostrar items cuando se cargan las imagenes useFetchGifs ", () => {
+  test('Debe de mostrar items cuando se cargan las imagenes useFetchGifs ', () => {
     const gifs = [
       {
-        id: "ABC",
-        title: "Saitama",
-        url: "https://localhost/saitama.jpg",
+        id: 'ABC',
+        title: 'Saitama',
+        url: 'https://localhost/saitama.jpg',
       },
       {
-        id: "123",
-        title: "Goku",
-        url: "https://localhost/goku.jpg",
+        id: '123',
+        title: 'Goku',
+        url: 'https://localhost/goku.jpg',
       },
     ];
 
@@ -37,6 +38,6 @@ describe("Pruebas en el componente <GifGrid/>", () => {
     });
 
     render(<GifGrid category={category} />);
-    expect(screen.getAllByRole("img").length).toBe(2);
+    expect(screen.getAllByRole('img').length).toBe(2);
   });
 });

@@ -27,4 +27,5 @@ Una vez clonado el repositorio ejecutar los siguientes comandos:
 ---
 
 ## Autor
+
 **Jonathan Plodzien**

@@ -3,7 +3,7 @@ import { GifExpertApp } from "../src/GifExpertApp";
 
 describe("Pruebas en el componente <GifExpertApp/>", () => {
   const title = "GifExpertApp";
-  const initialCategory = "One Punch";
+  const initialCategory = "one punch";
   test("Debe de hacer match con el snapshot ", () => {
     const { container } = render(<GifExpertApp />);
     expect(container).toMatchSnapshot();
@@ -42,7 +42,7 @@ describe("Pruebas en el componente <GifExpertApp/>", () => {
     const input = screen.getByRole("textbox");
     const form = screen.getByRole("form");
 
-    fireEvent.input(input, { target: { value: "Dragon Ball" } });
+    fireEvent.input(input, { target: { value: "dragon ball" } });
     fireEvent.submit(form);
 
     expect(window.alert).not.toHaveBeenCalled();
@@ -54,7 +54,7 @@ describe("Pruebas en el componente <GifExpertApp/>", () => {
     const input = screen.getByRole("textbox");
     const form = screen.getByRole("form");
 
-    fireEvent.input(input, { target: { value: "Dragon Ball" } });
+    fireEvent.input(input, { target: { value: "dragon ball" } });
     fireEvent.submit(form);
 
     const arrayCategories = screen.getAllByRole("heading", { level: 3 });
